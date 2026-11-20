@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3C/svg%3E" />
+    <title>Experiences</title>
+  </head>
+  <body>
+    <main id="screen-slider" class="screen screen--active" data-state="floating">
+      <div class="slider-stage">
+        <div id="slider-track" class="slider-track">
+          <div id="slider-dot-hit" class="slider-dot-hit">
+            <div id="slider-dot" class="slider-dot"></div>
+          </div>
+        </div>
+        <button id="btn-continue" class="btn-continue" type="button" tabindex="-1">继续</button>
+      </div>
+    </main>
+
+    <main id="screen-canvas" class="screen" data-untouched="true" hidden>
+      <div id="canvas-stage" class="canvas-stage">
+        <canvas id="art-canvas" class="art-canvas"></canvas>
+        <button id="btn-upload" class="btn-upload" type="button">
+          <svg
+            class="upload-glyph"
+            viewBox="0 0 28 28"
+            width="28"
+            height="28"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3.5" y="5.5" width="21" height="17" rx="2" />
+            <circle cx="9.75" cy="11" r="1.5" />
+            <path d="M5 19.5l5.4-5.2a1.1 1.1 0 0 1 1.54 0L16 18.2" />
+            <path d="M14.6 16.9l2.4-2.3a1.1 1.1 0 0 1 1.54 0L23 19" />
+          </svg>
+        </button>
+      </div>
+
+      <input id="file-input" type="file" accept="image/*" hidden />
+
+      <div id="toolbar" class="toolbar" role="group">
+        <button id="tool-slash" class="tool-btn tool-btn--active" type="button">划</button>
+        <button id="tool-draw" class="tool-btn" type="button">画</button>
+        <span class="toolbar-sep" aria-hidden="true"></span>
+        <button id="btn-save" class="tool-btn tool-btn--save" type="button">保存</button>
+      </div>
+    </main>
+
+    <div id="accent-probe" class="accent-probe" aria-hidden="true"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
